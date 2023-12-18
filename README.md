@@ -1,87 +1,211 @@
-<div align="center">
-    <a href="https://erpnext.com">
-        <img src="https://raw.githubusercontent.com/frappe/erpnext/develop/erpnext/public/images/erpnext-logo.png" height="128">
-    </a>
-    <h2>ERPNext</h2>
-    <p align="center">
-        <p>ERP made simple</p>
-    </p>
+# Frappe-ERPNext Version-15 in Ubuntu 22.04 LTS
+A complete Guide to Install Frappe/ERPNext version 15  in Ubuntu 22.04 LTS
 
-[![CI](https://github.com/frappe/erpnext/actions/workflows/server-tests.yml/badge.svg?branch=develop)](https://github.com/frappe/erpnext/actions/workflows/server-tests.yml)
-[![UI](https://github.com/erpnext/erpnext_ui_tests/actions/workflows/ui-tests.yml/badge.svg?branch=develop&event=schedule)](https://github.com/erpnext/erpnext_ui_tests/actions/workflows/ui-tests.yml)
-[![Open Source Helpers](https://www.codetriage.com/frappe/erpnext/badges/users.svg)](https://www.codetriage.com/frappe/erpnext)
-[![codecov](https://codecov.io/gh/frappe/erpnext/branch/develop/graph/badge.svg?token=0TwvyUg3I5)](https://codecov.io/gh/frappe/erpnext)
-[![docker pulls](https://img.shields.io/docker/pulls/frappe/erpnext-worker.svg)](https://hub.docker.com/r/frappe/erpnext-worker)
+#### Refer this for default python 3.11 setup
 
-[https://erpnext.com](https://erpnext.com)
+- [D-codeE Video Tutorial](https://youtu.be/TReR0I0O1Xo)
 
-</div>
+### Pre-requisites 
 
-ERPNext as a monolith includes the following areas for managing businesses:
-
-1. [Accounting](https://erpnext.com/open-source-accounting)
-1. [Warehouse Management](https://erpnext.com/distribution/warehouse-management-system)
-1. [CRM](https://erpnext.com/open-source-crm)
-1. [Sales](https://erpnext.com/open-source-sales-purchase)
-1. [Purchase](https://erpnext.com/open-source-sales-purchase)
-1. [HRMS](https://erpnext.com/open-source-hrms)
-1. [Project Management](https://erpnext.com/open-source-projects)
-1. [Support](https://erpnext.com/open-source-help-desk-software)
-1. [Asset Management](https://erpnext.com/open-source-asset-management-software)
-1. [Quality Management](https://erpnext.com/docs/user/manual/en/quality-management)
-1. [Manufacturing](https://erpnext.com/open-source-manufacturing-erp-software)
-1. [Website Management](https://erpnext.com/open-source-website-builder-software)
-1. [Customize ERPNext](https://erpnext.com/docs/user/manual/en/customize-erpnext)
-1. [And More](https://erpnext.com/docs/user/manual/en/)
-
-ERPNext is built on the [Frappe Framework](https://github.com/frappe/frappe), a full-stack web app framework built with Python & JavaScript.
-
-## Installation
-
-<div align="center" style="max-height: 40px;">
-    <a href="https://frappecloud.com/erpnext/signup">
-        <img src=".github/try-on-f-cloud-button.svg" height="40">
-    </a>
-    <a href="https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/frappe/frappe_docker/main/pwd.yml">
-      <img src="https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png" alt="Try in PWD" height="37"/>
-    </a>
-</div>
-
-> Login for the PWD site: (username: Administrator, password: admin)
-
-### Containerized Installation
-
-Use docker to deploy ERPNext in production or for development of [Frappe](https://github.com/frappe/frappe) apps. See https://github.com/frappe/frappe_docker for more details.
-
-### Manual Install
-
-The Easy Way: our install script for bench will install all dependencies (e.g. MariaDB). See https://github.com/frappe/bench for more details.
-
-New passwords will be created for the ERPNext "Administrator" user, the MariaDB root user, and the frappe user (the script displays the passwords and saves them to ~/frappe_passwords.txt).
+      Python 3.11+
+      Node.js 18+
+      
+      Redis 5                                       (caching and real time updates)
+      MariaDB 10.3.x / Postgres 9.5.x               (to run database driven apps)
+      yarn 1.12+                                    (js dependency manager)
+      pip 20+                                       (py dependency manager)
+      wkhtmltopdf (version 0.12.5 with patched qt)  (for pdf generation)
+      cron                                          (bench's scheduled jobs: automated certificate renewal, scheduled backups)
+      NGINX                                         (proxying multitenant sites in production)
 
 
-## Learning and community
+------
+### Steps to Install python 3.11.xx
+------
 
-1. [Frappe School](https://frappe.school) - Learn Frappe Framework and ERPNext from the various courses by the maintainers or from the community.
-2. [Official documentation](https://docs.erpnext.com/) - Extensive documentation for ERPNext.
-3. [Discussion Forum](https://discuss.erpnext.com/) - Engage with community of ERPNext users and service providers.
-4. [Telegram Group](https://erpnext_public.t.me) - Get instant help from huge community of users.
+> ## `Note: If you are using ubuntu 23.xx or latest  the default python version is 3.11.xx. So you can skip the python 3.11 installation steps`
+    
+#### First, import the Python repository with the most up-to-date stable releases.
+
+      sudo add-apt-repository ppa:deadsnakes/ppa -y
+      sudo apt update
+      
+#### install Python 3.11 by executing the following command in your terminal:
+
+      sudo apt install python3.11
+      python3.11 --version
+
+    
+#### To install all the extras in one go, run the following command.
+
+      sudo apt install python3.11-full
 
 
-## Contributing
 
-1. [Issue Guidelines](https://github.com/frappe/erpnext/wiki/Issue-Guidelines)
-1. [Report Security Vulnerabilities](https://erpnext.com/security)
-1. [Pull Request Requirements](https://github.com/frappe/erpnext/wiki/Contribution-Guidelines)
+#### Refer this for default python 3.11 setup
 
-## License
+- [www.linuxcapable.com](https://www.linuxcapable.com/how-to-install-python-3-11-on-ubuntu-linux/#google_vignette)
+- [ubuntuhandbook.org](https://ubuntuhandbook.org/index.php/2022/10/python-3-11-released-how-install-ubuntu)
 
-GNU/General Public License (see [license.txt](license.txt))
+-----
 
-The ERPNext code is licensed as GNU General Public License (v3) and the Documentation is licensed as Creative Commons (CC-BY-SA-3.0) and the copyright is owned by Frappe Technologies Pvt Ltd (Frappe) and Contributors.
 
-By contributing to ERPNext, you agree that your contributions will be licensed under its GNU General Public License (v3).
+### STEP 1 Install git
+    sudo apt-get install git
 
-## Logo and Trademark Policy
+### STEP 2 install python-dev
 
-Please read our [Logo and Trademark Policy](TRADEMARK_POLICY.md).
+    sudo apt-get install python3-dev
+
+### STEP 3 Install setuptools and pip (Python's Package Manager).
+
+    sudo apt-get install python3-setuptools python3-pip
+
+### STEP 4 Install virtualenv
+    
+    sudo apt install python3.11-venv
+    
+
+### STEP 5 Install MariaDB
+
+    sudo apt-get install software-properties-common
+    sudo apt install mariadb-server
+    sudo mysql_secure_installation
+    
+    
+      In order to log into MariaDB to secure it, we'll need the current
+      password for the root user. If you've just installed MariaDB, and
+      haven't set the root password yet, you should just press enter here.
+
+      Enter current password for root (enter for none): # PRESS ENTER
+      OK, successfully used password, moving on...
+      
+      
+      Switch to unix_socket authentication [Y/n] Y
+      Enabled successfully!
+      Reloading privilege tables..
+       ... Success!
+ 
+      Change the root password? [Y/n] Y
+      New password: 
+      Re-enter new password: 
+      Password updated successfully!
+      Reloading privilege tables..
+       ... Success!
+
+      Remove anonymous users? [Y/n] Y
+       ... Success!
+ 
+       Disallow root login remotely? [Y/n] Y
+       ... Success!
+
+       Remove test database and access to it? [Y/n] Y
+       - Dropping test database...
+       ... Success!
+       - Removing privileges on test database...
+       ... Success!
+ 
+       Reload privilege tables now? [Y/n] Y
+       ... Success!
+
+ 
+    
+    
+    
+### STEP 6  MySQL database development files
+
+    sudo apt-get install libmysqlclient-dev
+
+### STEP 7 Edit the mariadb configuration ( unicode character encoding )
+
+    sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+
+add this to the 50-server.cnf file
+
+    
+    [server]
+    user = mysql
+    pid-file = /run/mysqld/mysqld.pid
+    socket = /run/mysqld/mysqld.sock
+    basedir = /usr
+    datadir = /var/lib/mysql
+    tmpdir = /tmp
+    lc-messages-dir = /usr/share/mysql
+    bind-address = 127.0.0.1
+    query_cache_size = 16M
+    log_error = /var/log/mysql/error.log
+    
+    [mysqld]
+    innodb-file-format=barracuda
+    innodb-file-per-table=1
+    innodb-large-prefix=1
+    character-set-client-handshake = FALSE
+    character-set-server = utf8mb4
+    collation-server = utf8mb4_unicode_ci      
+     
+    [mysql]
+    default-character-set = utf8mb4
+
+Now press (Ctrl-X) to exit
+
+    sudo service mysql restart
+
+### STEP 8 install Redis
+    
+    sudo apt-get install redis-server
+
+### STEP 9 install Node.js 18.X package
+
+    sudo apt install curl 
+    curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+    source ~/.profile
+    nvm install 18
+
+### STEP 10  install Yarn
+
+    sudo apt-get install npm
+
+    sudo npm install -g yarn
+
+### STEP 11 install wkhtmltopdf
+
+    sudo apt-get install xvfb libfontconfig wkhtmltopdf
+    
+
+### STEP 12 install frappe-bench
+
+    sudo -H pip3 install frappe-bench
+    
+    bench --version
+    
+### STEP 13 initilise the frappe bench & install frappe latest version 
+
+    bench init frappe-bench --frappe-branch version-15 --python python3.11
+    
+    cd frappe-bench/
+    bench start
+    
+### STEP 14 create a site in frappe bench 
+    
+    bench new-site dcode.com
+    
+    bench --site dcode.com add-to-hosts
+
+Open url http://dcode.com:8000 to login 
+
+
+### STEP 15 install ERPNext latest version in bench & site
+
+    
+    bench get-app erpnext --branch version-15
+    ###OR
+    bench get-app https://github.com/frappe/erpnext --branch version-15
+
+    bench --site dcode.com install-app erpnext
+    
+    bench start
+    
+    
+
+
+    
